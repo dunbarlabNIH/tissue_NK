@@ -1,4 +1,4 @@
-#' barcode_ggheatmap
+#' Modified script from BarcodetrackR package (specifically, the barcode_ggheatmap function)
 #'
 #' Creates a heatmap displaying the log abundance of the top 'n' clones from each sample in the Summarized Experiment object, using ggplot2. Clones are on the y-axis and samples are on the x-axis. The ordering and clustering of clones on the y-axis as well as all aesthetics of the plot can be controlled through the arguments described below.
 #'
@@ -16,6 +16,9 @@
 #' @param hclust_linkage Character. One of "ward.D", "ward.D2", "single", "complete", "average" (= UPGMA), "mcquitty" (= WPGMA), "median" (= WPGMC) or "centroid" (= UPGMC).
 #' @param row_order Character; "hierarchical" to perform hierarchical clustering on the output and order in that manner, "emergence" to organize rows  by order of presence in data (from left to right), or a character vector of rows within the summarized experiment to plot.
 #' @param clusters How many clusters to cut hierarchical tree into for display when row_order is "hierarchical".
+#' @param clones_of_interest List. User inputted list of barcodes that will be highlighted in a column to the left of the heatmap. Can be used to highlight the existence of particular barcoded clones that are expanded across multiple different timepoints and/or locations.
+#' @param tissue_specific_clones. Binary (0 or 1). A flag that turns on (1) or turns off (0) the identification of tissue specific clones. The tissue-specific clones are the clones that are preferentially expanded in one tissue comapred to all other tissues. Identification of these clones are based on a fold-change cutoff.
+#' @param foldchange_threshold Integer. The value of the fold change threshold value for determining if a clone is tissue-specific. 
 #' @param percent_scale A numeric vector through which to spread the color scale (values inclusive from 0 to 1). Must be same length as color_scale.
 #' @param color_scale A character vector which indicates the colors of the color scale. Must be same length as percent_scale.
 #' @param return_table Logical. Whether or not to return table of barcode sequences with their log abundance in the 'value' column and cellnote for each sample instead of displaying a plot.
