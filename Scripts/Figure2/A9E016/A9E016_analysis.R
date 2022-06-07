@@ -4,7 +4,7 @@ library(reshape2)
 library(tidyverse)
 library(SummarizedExperiment)
 
-# read in the modified heatmap function 
+# read in the modified heatmap function (Change based on where the script is located)
 source("/Volumes/dirgroup/TSCBB/LAB/Annie/5_Tissue_NK_Study/Figure4/ZJ31/barcode_ggheatmap_annie_v2.1.R")
 
 # figure number 
@@ -15,6 +15,7 @@ monkey_ID <- "A9E016"
 
 ######### INITIAL SETUP (Loading in files + locating samples) #################
 
+# again must modify based on the location of the data & the location where files will be saved to
 data_dir <- paste("/Volumes/dirgroup/TSCBB/LAB/Annie/6_Tissue_NK_Manuscript/raw_data", sep = "")
 save_dir <- paste("/Volumes/dirgroup/TSCBB/LAB/Annie/6_Tissue_NK_Manuscript/", "Figure", figure_num, sep = "")
 
